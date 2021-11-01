@@ -1,0 +1,12 @@
+Maastricht,Hulsberg,12 
+Hulsberg,Geleen,9 
+Geleen,Sittard,4 
+Sittard,Ohe,13 
+Ohe,Echt,3 
+Echt,Heerlen,25 
+Heerlen,Bonn,81 
+Bonn,Aachen,72 
+Aachen,Epen,12 
+Epen,Kanne,18 
+Kanne,Maastricht,4
+Costo: 253

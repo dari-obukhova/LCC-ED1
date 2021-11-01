@@ -1,0 +1,45 @@
+                           PARA COMPILAR
+
+
+  Para compilar el programa hay que ejecutar en la consola las siguientes lineas: 
+
+----------------------------------------------------------------
+$ gcc -std=c99 -Wall -c btree.c dfs.c 
+----------------------------------------------------------------
+
+---------------------------------------------------------------------------
+$ gcc -std=c99 -Wall -o main main.c btree.o dfs.o
+---------------------------------------------------------------------------
+
+  Luego, hay que ejecutar la siguiente linea en la que el "archivoEntrada" es el archivo que contiene una lista de ciudades y los costos entre las ciudades en el siguiente formato: 
+
+Ciudades
+a, b, c, d, e, f, g, h, i, j, k
+Costos
+a,b,3
+b,c,4
+a,e,7
+a,h,6
+
+El"archivoSalida" es el archivo donde nos va a imprimir el camino con el costo mínimo. 
+  Estos archivos deben estar en la misma carpeta donde se ejecute el programa.
+
+-------------------------------------
+$ ./main archivoEntrada archivoSalida
+-------------------------------------
+
+
+                              SOBRE EL CÓDIGO
+
+ Cuando el programa esta leyendo el archivo de entrada, guarda las ciudades en un árbol AVL y en un arreglo de punteros a char, asociando cada ciudad a un numero ("id"). 
+
+ Los costos estan guardados en una matriz. Para agregar los costos a la matriz, hay que buscar dos ciudades en una estructura y devolver dos numeros que sean indices de la matriz (matriz[i][j]).
+
+Como el programa tiene que buscar dos ciudades cada vez que lea una linea (ej. "a,b,3"), pero la cantidad de ciudades es acotada (el programa tiene que funcionar para 15 ciudades), decidí usar la estructura de árbol AVL. En esta estructura una ciudades se encuentra con la complejidad logaritmica. 
+
+Resolví el problema usando la Búsqueda en profundidad (Depth First Search) y un algoritmo Ramificación y poda (Branch and Boundaries). 
+La función dfs llama recursivamente a si misma para chequear todos los caminos posibles, guardando la mejor solución. Cuando estamos chequeando un camino y al llegar a una ciudad el costo del camino supera la mejor solución, lo descartamos.  
+
+Cuando el programa se encontró un camino optimo en la forma "1-2-5...", hay que "traducir" la secuencía de los numeros a la de las ciudades. Para esto se busca un numero en el arreglo de punteros a char y devuelve el nombre de la ciudad. 
+
+

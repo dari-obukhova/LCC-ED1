@@ -1,0 +1,50 @@
+                PARA COMPILAR
+
+
+Para la primer parte compilamos primero la implementación:
+
+---------------------------------------
+$ gcc -std=c99 -Wall -c TP-parte1.c
+---------------------------------------
+
+Si todo anduvo bien, generó un TP-parte1.o en el directorio.
+
+Luego ejecutamos la siguiente orden:
+
+--------------------------------------------------
+$ gcc -std=c99 -Wall -o main1 main1.c TP-parte1.o
+--------------------------------------------------
+
+Ejecutamos "main" para verificar que haga lo esperado:
+---------
+$ ./main1
+---------
+
+Si todo salió bien, deberá haber creado un archivo llamado persona.txt y procedemos
+a ejecutar la segunda parte:
+
+------------------------------------
+$ gcc -std=c99 -Wall -c TP-parte2.c
+------------------------------------
+
+Esto habrá generado un TP-parte2.o en el directorio.
+Ejecutamos:
+
+--------------------------------------------------
+$ gcc -std=c99 -Wall -o main2 main2.c TP-parte2.o
+--------------------------------------------------
+
+y ejecutamos "main2" para verificar que haga lo esperado:
+
+---------
+$ ./main2
+---------
+
+
+SOBRE NUESTRAS FUNCIONES
+
+En la primer parte definimos MAXCHAR 100 porque decidimos que es lo suficientemente grande para
+que entren todos los caracteres de los nombres y de los países. 
+
+En la segunda parte definimos un "header" para poder acceder al nodo final de la lista sin tener
+que recorrerla entera.
